@@ -136,7 +136,7 @@ Esta é uma oportunidade de você exercitar sua criatividade e experimentar os c
     * Defina as propriedades:
       - `transform` com o valor `skewX(-10deg)`;
 
-### 15 - Adicione as classes de forma aleatória afim de estilizar as palavras.
+### 15 - Adicione as classes de forma aleatória a fim de estilizar as palavras.
 
   Pontos importantes:
 
