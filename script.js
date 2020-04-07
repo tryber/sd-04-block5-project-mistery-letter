@@ -59,4 +59,4 @@ button.addEventListener('click', () => {
   array = string.split(' ');
 
   renderizar();
-})
+});
