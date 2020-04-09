@@ -3,9 +3,10 @@ const cartaTexto = document.getElementById('carta-texto');
 const cartaGerada = document.getElementById('carta-gerada');
 const styleGroup = ['newspaper', 'magazine1', 'magazine2'];
 const sizeGroup = ['medium', 'big', 'reallybig'];
-const rotateGroup = ['rotateleft', 'rotateright', 'stright'];
-const skewGroup = ['skewleft', 'skewright', 'straight'];
+const rotateGroup = ['rotateleft', 'rotateright'];
+const skewGroup = ['skewleft', 'skewright'];
 const groups = [styleGroup, sizeGroup, rotateGroup, skewGroup];
+const contador = document.getElementById('carta-contador');
 
 function randomGroup(group) {
   const randomNumber = Math.floor(Math.random() * group.length);
@@ -27,6 +28,8 @@ criarCarta.addEventListener('click', () => {
     }
     cartaGerada.appendChild(word);
   }
+  const numberOfWords = document.querySelectorAll('span').length;
+  contador.innerHTML = numberOfWords;
 });
 
 cartaGerada.addEventListener('click', (e) => {
