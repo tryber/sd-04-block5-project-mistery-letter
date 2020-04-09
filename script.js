@@ -42,11 +42,12 @@ function changeStyle(element){
 }
 
 carta.addEventListener('click', (e) => {
-  changeStyle(e.target)
+  console.log(e.target.tagName)
+  if (e.target.tagName === "SPAN"){
+    changeStyle(e.target);
+  }
+  
 })
 criarCarta.addEventListener('click', () => {
-  let testando = document.getElementById("teste")
-
-  changeStyle(testando);
   createSpam();
 });
