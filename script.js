@@ -8,24 +8,25 @@ const skewGroup = ['skewleft', 'skewright'];
 const groups = [styleGroup, sizeGroup, rotateGroup, skewGroup];
 
 function randomGroup(group) {
-    const randomNumber = Math.floor(Math.random() * group.length);
-    return group[randomNumber];
+  const randomNumber = Math.floor(Math.random() * group.length);
+  return group[randomNumber];
 };
 
 function addClass(element, newClass) {
-    element.classList.add(newClass);
+  element.classList.add(newClass);
 };
 
 criarCarta.addEventListener('click', () => {
-    cartaGerada.innerHTML = null;
-    const words = cartaTexto.value.split(' ');
-    for (let i = 0; i < words.length; i += 1) {
-        let word = document.createElement('span')
-        word.innerHTML = `${words[i]}`;
-        for (let i = 0; i < groups.length; i += 1) {
-            addClass(word, randomGroup(groups[i]))
-        }
-        word
-        cartaGerada.appendChild(word);
+  cartaGerada.innerHTML = null;
+  const words = cartaTexto.value.split(' ');
+  for (let i = 0; i < words.length; i += 1) {
+    let word = document.createElement('span')
+    word.innerHTML = `${words[i]}`;
+    for (let i = 0; i < groups.length; i += 1) {
+      addClass(word, randomGroup(groups[i]))
     }
+    word
+    cartaGerada.appendChild(word);
+  }
 });
+
