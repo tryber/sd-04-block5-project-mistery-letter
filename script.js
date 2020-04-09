@@ -2,18 +2,21 @@ let textoCarta = document.getElementById('carta-texto')
 let criarCarta = document.getElementById('criar-carta')
 let carta = document.getElementById('carta-gerada')
 let allStyles = [['newspaper', 'magazine1', 'magazine2'], ['medium', 'big', 'reallybig'],['rotateleft', 'rotateright'],['skewleft', 'skewright'] ];
+let cartaContador = document.getElementById('carta-contador')
 
+function wordCounter() {
+  cartaContador.innerText = (carta.innerText.split(" ").length)
+}
 
-
-function createSpam(){
-  let words = textoCarta.value.split(" ")
+function createSpam() {
+  let words = textoCarta.value.split(" ");
   for (let i = 0; i < words.length; i += 1){
     let spam = document.createElement('span');
     spam.innerText = words[i];
     changeStyle(spam);
     carta.appendChild(spam)
   }
-  console.log(words)
+  cartaContador.innerText = document.getElementsByTagName('span').length;
 }
 //Fisher–Yates shuffle
 
@@ -42,12 +45,9 @@ function changeStyle(element){
 }
 
 carta.addEventListener('click', (e) => {
-  console.log(e.target.tagName)
   if (e.target.tagName === "SPAN"){
     changeStyle(e.target);
   }
   
 })
-criarCarta.addEventListener('click', () => {
-  createSpam();
-});
+criarCarta.addEventListener('click', createSpam);
