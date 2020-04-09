@@ -25,7 +25,15 @@ criarCarta.addEventListener('click', () => {
     for (let j = 0; j < groups.length; j += 1) {
       addClass(word, randomGroup(groups[j]));
     }
-    word;
     cartaGerada.appendChild(word);
+  }
+});
+
+cartaGerada.addEventListener('click', (e) => {
+  if (e.target !== cartaGerada) {
+    e.target.className = '';
+    for (let i = 0; i < groups.length; i += 1) {
+      addClass(e.target, randomGroup(groups[i]));
+    }
   }
 });
