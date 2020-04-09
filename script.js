@@ -41,6 +41,9 @@ function changeStyle(element){
   }
 }
 
+carta.addEventListener('click', (e) => {
+  changeStyle(e.target)
+})
 criarCarta.addEventListener('click', () => {
   let testando = document.getElementById("teste")
 
