@@ -57,12 +57,15 @@
       transform: skewX(-10deg);
     }
 
+    span{
+      display: inline-block
+    }
 
   </style>
 </head>
 <body>
   <input type='text' id='carta-texto'></body>
-  <p id='carta-gerada'></p>
+  <p id='carta-gerada'><span id = 'teste'>Teste</span></p>
   <button id='criar-carta'>Criar Carta</button>
   <script>
     let criarCarta = document.getElementById('criar-carta')
@@ -84,19 +87,21 @@
     }
 
     function changeStyle(element){
+      element.className = ""
       let randomStyles = shuffle(allStyles);
       let numberStyles = Math.floor(Math.random() * (randomStyles.length - 1)) + 2;
-      console.log(randomStyles[0]);
-      console.log(randomStyles[1]);
-      console.log(randomStyles[2]);
-      console.log(randomStyles[3]);
       for (let i = 0; i < numberStyles; i += 1) {
-        let selectedStyle = Math.floor(Math.random()) * randomStyles[i].length;
-        //element.classList.add(randomStyles[i][selectedStyle])
+        let selectedStyle = Math.floor(Math.random() * randomStyles[i].length);
+        console.log(selectedStyle);
+        console.log(randomStyles[i].length)
+        element.classList.add(randomStyles[i][selectedStyle])
       }
     }
     
-    criarCarta.addEventListener('click', changeStyle);
+    criarCarta.addEventListener('click', () => {
+      let testando = document.getElementById("teste")
+      changeStyle(testando);
+    });
   </script>
 </body>
 </html>
