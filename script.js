@@ -19,7 +19,7 @@ btnGenerate.addEventListener('click', () => {
     letter.appendChild(elem);
     let styles = getStylesNames();
     applyStyles(elem, styles[0], styles[1], styles[2]);
-    letterCounter.innerHTML = `Total palavras: ${countWords}`;
+    letterCounter.innerHTML = countWords;
   }
 });
 

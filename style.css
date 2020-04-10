@@ -118,3 +118,8 @@ header span {
   top: -80px;
   width: 400px;
 }
+
+.carta-contador-div p {
+  display: inline-block;
+  margin-left: 2px;
+}
