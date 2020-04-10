@@ -1,12 +1,17 @@
 
+let countWords = 0;
 const textLetter = document.getElementById('carta-texto');
 const btnGenerate = document.getElementById('criar-carta');
 const letter = document.getElementById('carta-gerada');
 const arrStyles = [['newspaper','magazine1','magazine2'], ['medium','big','reallybig'], ['rotateleft','rotateright'], ['skewleft','skewright']];
+const letterCounter = document.getElementById('carta-contador');
 
 btnGenerate.addEventListener('click', () => {
   letter.innerHTML = '';
+  textLetter.value = textLetter.value.trim();
   let splitText = textLetter.value.split(' ');
+  countWords = splitText.length;
+  console.log(splitText)
   for (let i = 0; i < splitText.length; i += 1) {
     let elem = document.createElement('span');
     let text = document.createTextNode(splitText[i]);
@@ -14,10 +19,9 @@ btnGenerate.addEventListener('click', () => {
     letter.appendChild(elem);
     let styles = getStylesNames();
     applyStyles(elem, styles[0], styles[1], styles[2]);
+    letterCounter.innerHTML = `Total palavras: ${countWords}`;
   }
 });
-
-// console.log(getStylesNames())
 
 function getStylesNames() {
   let styles = [];

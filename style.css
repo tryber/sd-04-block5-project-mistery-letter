@@ -6,7 +6,7 @@ body {
   background-color: rgb(121, 121, 121);
   border: 2px solid rgb(143, 143, 143);
   border-radius: 10px;
-  box-shadow: rgb(233, 233, 233) 5px 5px 3px;
+  box-shadow: rgb(233, 233, 233) 5px 5px 2px;
   height: 400px;
   margin: auto;
   margin-top: 20px;
@@ -63,12 +63,12 @@ header span {
 }
 
 .magazine1 {
-    background-color: teal;
-    color: white;
-    font-family: Verdana;
-    font-weight: 900;
-    text-transform: uppercase;
-  }
+  background-color: teal;
+  color: white;
+  font-family: Verdana;
+  font-weight: 900;
+  text-transform: uppercase;
+}
 
 .magazine2 {
   background-image: url('images/pink-pattern.png');
@@ -105,5 +105,16 @@ header span {
 }
 
 .skewright {
-    transform: skewX(-10deg);
+  transform: skewX(-10deg);
+}
+
+.carta-contador-div {
+  color: white;
+  font-size: 30px;
+  font-weight: 900;
+  margin: auto;   
+  position: relative;
+  text-align: center;
+  top: -80px;
+  width: 400px;
 }
