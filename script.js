@@ -64,7 +64,7 @@ function addAnotherClass() {
       let joinArrStyles = arrStyles.join(',');
       let arrStylesNew = joinArrStyles.split(',');
       console.log(arrStylesNew);
-      words[i].classList.add(arrStylesNew[rand]);
+      words[i].className = arrStylesNew[rand];
     })
   }
 }
