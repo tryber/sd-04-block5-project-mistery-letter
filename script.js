@@ -5,26 +5,26 @@ const btnGenerate = document.getElementById('criar-carta');
 const letter = document.getElementById('carta-gerada');
 const arrStyles = [['newspaper','magazine1','magazine2'], ['medium','big','reallybig'], ['rotateleft','rotateright'], ['skewleft','skewright']];
 const letterCounter = document.getElementById('carta-contador');
+let styles = [];
 
 btnGenerate.addEventListener('click', () => {
   letter.innerHTML = '';
   textLetter.value = textLetter.value.trim();
   let splitText = textLetter.value.split(' ');
   countWords = splitText.length;
-  console.log(splitText)
   for (let i = 0; i < splitText.length; i += 1) {
     let elem = document.createElement('span');
     let text = document.createTextNode(splitText[i]);
     elem.appendChild(text);
     letter.appendChild(elem);
-    let styles = getStylesNames();
-    applyStyles(elem, styles[0], styles[1], styles[2]);
+    let stylesL = getStylesNames();
+    applyStyles(elem, stylesL[0], stylesL[1], stylesL[2]);
     letterCounter.innerHTML = countWords;
+    styles = [];
   }
 });
 
 function getStylesNames() {
-  let styles = [];
   let firstIndex = Math.floor(Math.random() * 4);
   let secondIndex = firstIndex;
   while (secondIndex === firstIndex) {
@@ -34,17 +34,21 @@ function getStylesNames() {
   while (thirdIndex === firstIndex || thirdIndex === secondIndex) {
     thirdIndex = Math.floor(Math.random() * 4);
   }
-  let i = Math.floor(Math.random() * arrStyles[firstIndex].length);
-  let j = Math.floor(Math.random() * arrStyles[secondIndex].length);
-  let k = Math.floor(Math.random() * arrStyles[thirdIndex].length);
-  let style1 = arrStyles[firstIndex][i];
-  let style2 = arrStyles[secondIndex][j];
-  let style3 = arrStyles[thirdIndex][k];
-  styles[0] = style1;
-  styles[1] = style2;
-  styles[2] = style3;
+  let arrayIndex = [firstIndex, secondIndex, thirdIndex];
+  teste(arrayIndex);
   return styles;
 }
+
+
+function teste(arr) {
+  let num = 0;
+  for (let i = 0; i < arr.length; i++){
+      let j = arr[i]
+      num = Math.floor(Math.random() * arrStyles[j].length);
+      styles.push(arrStyles[j][num]);
+  }
+}
+
 
 function applyStyles(elem, style1, style2, style3) {
   elem.classList.add(style1);

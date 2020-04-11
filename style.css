@@ -7,11 +7,11 @@ body {
   border: 2px solid rgb(143, 143, 143);
   border-radius: 10px;
   box-shadow: rgb(233, 233, 233) 5px 5px 2px;
-  height: 400px;
+  height: 450px;
   margin: auto;
   margin-top: 20px;
   padding: 5px 5px;
-  width: 800px;
+  width: 850px;
 }
 
 header {
