@@ -1,0 +1,125 @@
+body {
+  background-color: rgb(202, 202, 202);
+}
+
+.main {
+  background-color: rgb(121, 121, 121);
+  border: 2px solid rgb(143, 143, 143);
+  border-radius: 10px;
+  box-shadow: rgb(233, 233, 233) 5px 5px 2px;
+  height: 450px;
+  margin: auto;
+  margin-top: 20px;
+  padding: 5px 5px;
+  width: 850px;
+}
+
+header {
+  color: white;
+  margin-bottom: 40px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+header span {
+  float: left;
+  margin-right: 10px;
+  position: relative;
+  top: -8px;
+}
+
+.input-carta-texto {
+  border: 2px solid rgb(228, 228, 228);
+  padding: 3px;
+}
+
+.btn-criar-carta {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid white;
+  border-radius: 7px;
+  color: rgb(88, 88, 88);
+  font-weight: 900;
+  height: 30px;
+  margin-left: 10px;
+  width: 100px;
+}
+
+.carta-gerada {
+  border: solid 1px rgb(204, 204, 204);
+  height: 150px;
+  margin: auto;
+  padding: 10px;
+  width: 95%;
+}
+
+.carta-gerada span {
+    font-size: 20px;
+}
+
+.newspaper {
+  background-color: antiquewhite;
+  font-family: 'Times New Roman';
+  font-weight: bold;
+}
+
+.magazine1 {
+  background-color: teal;
+  color: white;
+  font-family: Verdana;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.magazine2 {
+  background-image: url('images/pink-pattern.png');
+  color: fuchsia;
+  font-family: Verdana;
+  font-weight: 900;
+}
+
+.medium {
+  font-size: 20px;
+  padding: 8px;
+}
+
+.big {
+  font-size: 30px;
+  padding: 10px;
+}
+
+.reallybig {
+  font-size: 40px;
+  padding: 15px;
+}
+
+.rotateleft {
+  transform: rotate(-5deg);
+}
+
+.rotateright {
+  transform: rotate(5deg);
+}
+
+.skewleft {
+  transform: skewX(10deg);
+}
+
+.skewright {
+  transform: skewX(-10deg);
+}
+
+.carta-contador-div {
+  color: white;
+  font-size: 30px;
+  font-weight: 900;
+  margin: auto;   
+  position: relative;
+  text-align: center;
+  top: -80px;
+  width: 400px;
+}
+
+.carta-contador-div p {
+  display: inline-block;
+  margin-left: 2px;
+}
