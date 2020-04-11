@@ -6,6 +6,7 @@ const letter = document.getElementById('carta-gerada');
 const arrStyles = [['newspaper','magazine1','magazine2'], ['medium','big','reallybig'], ['rotateleft','rotateright'], ['skewleft','skewright']];
 const letterCounter = document.getElementById('carta-contador');
 let styles = [];
+let words = '';
 
 btnGenerate.addEventListener('click', () => {
   letter.innerHTML = '';
@@ -22,6 +23,8 @@ btnGenerate.addEventListener('click', () => {
     letterCounter.innerHTML = countWords;
     styles = [];
   }
+  words = document.querySelectorAll('#carta-gerada > span');
+  addAnotherClass()
 });
 
 function getStylesNames() {
@@ -35,12 +38,11 @@ function getStylesNames() {
     thirdIndex = Math.floor(Math.random() * 4);
   }
   let arrayIndex = [firstIndex, secondIndex, thirdIndex];
-  teste(arrayIndex);
+  lookupStyles(arrayIndex);
   return styles;
 }
 
-
-function teste(arr) {
+function lookupStyles(arr) {
   let num = 0;
   for (let i = 0; i < arr.length; i++){
       let j = arr[i]
@@ -49,9 +51,20 @@ function teste(arr) {
   }
 }
 
-
 function applyStyles(elem, style1, style2, style3) {
   elem.classList.add(style1);
   elem.classList.add(style2);
   elem.classList.add(style3);
+}
+
+function addAnotherClass() {
+  for (let i = 0; i < words.length; i += 1) {
+    words[i].addEventListener('click', () => {
+      let rand = Math.floor(Math.random() * 10);
+      let joinArrStyles = arrStyles.join(',');
+      let arrStylesNew = joinArrStyles.split(',');
+      console.log(arrStylesNew);
+      words[i].classList.add(arrStylesNew[rand]);
+    })
+  }
 }
