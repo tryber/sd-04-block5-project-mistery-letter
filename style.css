@@ -2,3 +2,9 @@ span {
   display: inline-block;
   margin: 2px;
 }
+
+.newspaper {
+  background-color: antiquewhite;
+  font-family: Times New Roman;
+  font-weight: bold;
+}
