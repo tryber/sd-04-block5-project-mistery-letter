@@ -3,10 +3,10 @@ const btnCriarCarta = document.getElementById('criar-carta'); // Manipula botão
 const cartaGerada = document.getElementById('carta-gerada'); // Manipula cartas geradas.
 
 function insereCarta(vet) {
-  cartaGerada.innerHTML = '';
+  cartaGerada.innerHTML = null;
   for (let i = 0; i < vet.length; i += 1) {
     const carta = document.createElement('span');
-    carta.innerText = vet[i];
+    carta.innerHTML = vet[i];
     cartaGerada.appendChild(carta);
   }
 }
