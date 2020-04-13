@@ -9,7 +9,7 @@ criarCarta.addEventListener("click", () => {
       const spanElement = document.createElement("span");
       const spanTextNode = document.createTextNode(`${splitedText[index]} `);
       spanElement.appendChild(spanTextNode);
-      spanElement.setAttribute("id", `span-node${index}`);
+      spanElement.setAttribute("id", `carta-gerada`);
       cartaGerada.appendChild(spanElement);
     }
   }
