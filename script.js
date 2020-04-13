@@ -24,3 +24,9 @@ function  sortClass() {
 
   return wordStyle;
 }
+
+function explodePhrase(phrase) {
+  const wordsArray = phrase.trim().split(' ');
+
+  return wordsArray;
+}
