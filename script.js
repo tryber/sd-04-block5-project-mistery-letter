@@ -15,6 +15,7 @@ makeLetterBtn.addEventListener('click', () => {
     wordContainer.innerHTML = word;
     letter.appendChild(wordContainer);
   });
+  setStyleChangeEvent();
 });
 
 function randomNumber(maxNumber) {
@@ -40,7 +41,7 @@ function sortClass() {
 }
 
 function explodePhrase(phrase) {
-  const wordsArray = phrase.split(' ');
+  const wordsArray = phrase.trim().split(' ');
 
   return wordsArray;
 }
@@ -50,4 +51,18 @@ function clearLetter() {
   while (letterContent.lastChild) {
     letterContent.lastChild.remove();
   }
+}
+
+function setStyleChangeEvent() {
+  document.querySelectorAll('span').forEach((word) => {
+    word.addEventListener('click', (e) => {
+      e.target.className = '';
+      const wordStyle = sortClass();
+      for (const style in wordStyle) {
+        if (wordStyle.hasOwnProperty(style)) {
+          e.target.classList.add(wordStyle[style]);
+        }
+      }
+    });
+  });
 }
