@@ -39,7 +39,7 @@ function sortClass() {
 }
 
 function explodePhrase(phrase) {
-  const wordsArray = phrase.trim().split(' ');
+  const wordsArray = phrase.split(' ');
 
   return wordsArray;
 }
