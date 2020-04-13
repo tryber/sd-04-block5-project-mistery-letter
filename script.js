@@ -15,7 +15,7 @@ makeLetterBtn.addEventListener('click', () => {
     wordContainer.innerHTML = word;
     letter.appendChild(wordContainer);
   });
-  document.querySelector('#carta-contador').innerHTML = countLetters(wordsArray);
+  document.querySelector('#carta-contador').innerHTML = wordsArray.length;
   setStyleChangeEvent();
 });
 
@@ -66,13 +66,4 @@ function setStyleChangeEvent() {
       }
     });
   });
-}
-
-function countLetters(words) {
-  let counter = 0;
-  words.forEach((word) => {
-    counter += word.length;
-  });
-
-  return counter;
 }
