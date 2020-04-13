@@ -1,6 +1,7 @@
 const cartaTexto = document.getElementById('carta-texto'); // Manipula a caixa de texto.
 const btnCriarCarta = document.getElementById('criar-carta'); // Manipula botão gerar carta.
 const cartaGerada = document.getElementById('carta-gerada'); // Manipula cartas geradas.
+const contador = document.getElementById('carta-contador'); // Manipula o contador.
 const estilos = [
   ['newspaper', 'magazine1', 'magazine2'],
   ['medium', 'big', 'reallybig'],
@@ -20,6 +21,10 @@ function adicionaClass(elemento) {
   }
 }
 
+function contaPalavras(vet) {
+  contador.innerHTML = vet.length;
+}
+
 function insereCarta(vet) {
   cartaGerada.innerHTML = '';
   for (let i = 0; i < vet.length; i += 1) {
@@ -31,6 +36,7 @@ function insereCarta(vet) {
     });
     cartaGerada.appendChild(carta);
   }
+  contaPalavras(vet);
 }
 
 function geraCarta() {
