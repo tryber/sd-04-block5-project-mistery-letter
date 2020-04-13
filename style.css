@@ -1,0 +1,66 @@
+.big {
+  font-size: 30px;
+  padding: 10px;
+}
+
+.carta-contador {
+  font-size: 20px;
+  font-weight: 900;
+  font-family: 'Orbitron', sans-serif;
+  padding: 10px;
+}
+
+.newspaper {
+  background-color: antiquewhite;
+  font-family: Times New Roman, Times, serif;
+  font-weight: bold;
+  padding: 9px;
+}
+
+.magazine1 {
+  background-color: teal;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 900;
+  padding: 7px;
+  text-transform: uppercase;
+}
+
+.magazine2 {
+  background-image: url('images/pink-pattern.png');
+  color: fuchsia;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 900;
+  padding: 11px;
+}
+
+.medium {
+  font-size: 20px;
+  padding: 8px;
+  background-image: url('images/news.png');
+}
+
+.reallybig {
+  font-size: 40px;
+  padding: 15px;
+}
+
+.rotateleft {
+  transform: rotate(-5deg);
+  padding: 13px;
+}
+
+.rotateright {
+  transform: rotate(5deg);
+  padding: 12px;
+}
+
+.skewleft {
+  transform: skewX(10deg);
+  padding: 14px;
+}
+
+.skewright {
+  transform: skewX(-10deg);
+  padding: 6px;
+}
