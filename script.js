@@ -12,8 +12,8 @@ const estilos = [
 function adicionaClass(elemento) {
   elemento.classList = '';
   for (let i = 0; i < 3; i += 1) {
-    const grupo = Number.parseInt(Math.floor(Math.random() * estilos.length), 10);
-    const estilo = Number.parseInt(Math.floor(Math.random() * estilos[grupo].length), 10);
+    const grupo = Math.floor(Math.random() * estilos.length);
+    const estilo = Math.floor(Math.random() * estilos[grupo].length);
     elemento.classList.add(estilos[grupo][estilo]);
     if (elemento.classList.length === 3) {
       break;
