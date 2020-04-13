@@ -1,6 +1,7 @@
 const letter = document.querySelector('#carta-gerada');
 const makeLetterBtn = document.querySelector('#criar-carta');
 makeLetterBtn.addEventListener('click', () => {
+  clearLetter();
   const textInput = document.querySelector('#carta-texto').value;
   const wordsArray = explodePhrase(textInput);
   wordsArray.forEach((word) => {
@@ -45,9 +46,8 @@ function explodePhrase(phrase) {
 }
 
 function clearLetter() {
-  for (const word in letter) {
-    if (letter.hasOwnProperty(word)) {
-      letter.removeChild(letter[word]);
-    }
+  const letterContent = document.querySelector('#carta-gerada');
+  while (letterContent.lastChild) {
+    letterContent.lastChild.remove();
   }
 }
