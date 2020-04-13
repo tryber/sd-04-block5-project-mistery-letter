@@ -7,7 +7,7 @@ const estilos = [
   ['medium', 'big', 'reallybig'],
   ['rotateleft', 'rotateright'],
   ['skewleft', 'skewright'],
-];
+]; // Matriz de estilos.
 
 function adicionaClass(elemento) {
   elemento.classList = '';
@@ -48,10 +48,6 @@ function geraCarta() {
   }
 }
 
-function eventBtnCriarCarta() {
-  btnCriarCarta.addEventListener('click', geraCarta);
-}
-
 window.onload = function () {
-  eventBtnCriarCarta();
+  btnCriarCarta.addEventListener('click', geraCarta);
 };
