@@ -1,4 +1,5 @@
 span {
+  cursor: pointer;
   display: inline-block;
   margin: 2px;
 }

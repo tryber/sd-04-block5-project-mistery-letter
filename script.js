@@ -9,6 +9,7 @@ const estilos = [
 ];
 
 function adicionaClass(elemento) {
+  elemento.classList = '';
   for (let i = 0; i < 3; i += 1) {
     const grupo = Number.parseInt(Math.floor(Math.random() * estilos.length), 10);
     const estilo = Number.parseInt(Math.floor(Math.random() * estilos[grupo].length), 10);
@@ -25,6 +26,9 @@ function insereCarta(vet) {
     const carta = document.createElement('span');
     carta.innerHTML = vet[i];
     adicionaClass(carta);
+    carta.addEventListener('click', function () {
+      adicionaClass(carta);
+    });
     cartaGerada.appendChild(carta);
   }
 }
