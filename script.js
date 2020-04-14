@@ -51,7 +51,7 @@ button.addEventListener('click', function(){
       ptag.appendChild(spantag);
       // contador
       let numero = input.value.split(' ').length;
-      count.innerHTML = `A frase digitada acima possui: ${numero} palavras `;
+      count.innerHTML = numero;
     }
   }else{
     alert('Por favor preencha o campo com o texto desejado!');
@@ -63,5 +63,8 @@ button.addEventListener('click', function(){
 //   count.innerHTML = `A frase digitada acima possui: ${numero} palavras `;
 // }
 
+ptag.addEventListener('mouseover', function(event){
+  console.log(event.target);
+})
 
 // end testing area
