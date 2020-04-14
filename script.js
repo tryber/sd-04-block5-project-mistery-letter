@@ -59,4 +59,4 @@ function setParameters() {
 window.onload = function () {
   addEvents();
   setParameters();
-}
+};
