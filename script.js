@@ -63,8 +63,13 @@ button.addEventListener('click', function(){
 //   count.innerHTML = `A frase digitada acima possui: ${numero} palavras `;
 // }
 
-ptag.addEventListener('mouseover', function(event){
+ptag.addEventListener('click', function(event){
   console.log(event.target);
+  event.target.className = '';
+  for( let j = 0; j < todosGroup.length; j += 1){
+    let umaClasse = randomizar(todosGroup[j]);
+    novaClasse(event.target, umaClasse);
+  }
 })
 
 // end testing area
