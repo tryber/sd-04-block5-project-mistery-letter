@@ -13,22 +13,50 @@ let styleGroup = ['newspaper', 'magazine1', 'magazine2'];
 let sizeGroup = ['medium', 'big', 'reallybig'];
 let rotateGroup = ['rotateleft', 'rotateright'];
 let inclineGroup = ['skewleft', 'skewright'];
+let todosGroup = [styleGroup, sizeGroup, rotateGroup, inclineGroup];
 
-// create <span> tag
+// create <span> tag and <p> tag
 
-const spanTag = document.createElement('span');
+let spantag = document.createElement('span');
+let ptag = document.querySelector('#texto'); 
 
 // start testing area
 
-button.addEventListener('click', function(){
-  let text = input.value;
-  let pTag = document.querySelector('#texto');
+function novaClasse(elemento, classe){
+  elemento.classList.add(classe);
+};
+//let teste = novaClasse(button, 'big');
+//console.log(teste);
+
+function randomizar(grupo){
+  let grupoRandom = Math.floor(Math.random() * grupo.length);
+  return grupo[grupoRandom];
+};
+//let teste2 = randomizar(styleGroup);
+//console.log(teste2);
+
+
+
+button.addEventListener('click', function(){  
   if(input.value !== ""){
-    pTag.appendChild(spanTag);
-    pTag.firstChild.innerHTML = text;
+    // zerar o paragrafo para inserir nova carta.
+    ptag.innerHTML = null;
+    let word = input.value.split(' ');
+    for (let i = 0; i < word.length; i += 1){
+      let spantag = document.createElement('span');
+      spantag.innerHTML = word[i]; 
+      for( let j = 0; j < todosGroup.length; j += 1){
+        let umaClasse = randomizar(todosGroup[j]);
+        //console.log(todosGroup[j]);
+       novaClasse(spantag, umaClasse)
+      }     
+      ptag.appendChild(spantag);
+    }
   }else{
     alert('Por favor preencha o campo com o texto desejado!');
   }
 })
+
+
 
 // end testing area
