@@ -32,3 +32,12 @@ criarCarta.addEventListener("click", () => {
     }
   }
 });
+
+cartaGerada.addEventListener('click', (event) => {
+  const estiloR = estilo[Math.floor(Math.random() * estilo.length)];
+  const tamanhoR = tamanho[Math.floor(Math.random() * tamanho.length)];
+  const rotacaoR = rotacao[Math.floor(Math.random() * rotacao.length)];
+  const inclinacaoR = inclinacao[Math.floor(Math.random() * inclinacao.length)];
+  event.target.removeAttribute("class");
+  event.target.setAttribute("class", `${estiloR} ${tamanhoR} ${rotacaoR} ${inclinacaoR}`);
+});
