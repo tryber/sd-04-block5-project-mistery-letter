@@ -15,13 +15,13 @@ criarCarta.addEventListener('click', () => {
   }
   if (cartaTexto.value) {
     const splitedText = cartaTexto.value.split(' ');
-    for (const keys = 0; keys < splitedText.length; keys=+1) {
+    for (let index = 0; index < splitedText.length; index += 1) {
       const estiloR = estilo[Math.floor(Math.random() * estilo.length)];
       const tamanhoR = tamanho[Math.floor(Math.random() * tamanho.length)];
       const rotacaoR = rotacao[Math.floor(Math.random() * rotacao.length)];
       const inclinacaoR = inclinacao[Math.floor(Math.random() * inclinacao.length)];
       const spanElement = document.createElement('span');
-      const spanTextNode = document.createTextNode(`${splitedText[keys]}`);
+      const spanTextNode = document.createTextNode(`${splitedText[index]}`);
 
       spanElement.appendChild(spanTextNode);
       spanElement.setAttribute('id', 'carta-gerada');
