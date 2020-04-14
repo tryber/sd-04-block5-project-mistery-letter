@@ -12,7 +12,7 @@ const allClasses = {
 function randomClass(element) {
   element.className = '';
   for (let i = 0; i < Object.keys(allClasses).length; i += 1) {
-    const randomIndex = parseInt(Math.random() * allClasses[i].length, 1);
+    const randomIndex = parseInt(Math.random() * allClasses[i].length, 10);
     element.classList.add(allClasses[i][randomIndex]);
   }
 }
