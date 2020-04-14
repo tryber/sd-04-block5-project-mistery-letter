@@ -11,7 +11,7 @@ let allClasses = {
 
 function randomClass(element) {
   element.className = "";
-  for (let i = 0; i < 4; i += 1) {
+  for (let i in allClasses) {
     let randomIndex = parseInt(Math.random() * allClasses[i].length);
     element.classList.add(allClasses[i][randomIndex]);
   }
@@ -20,10 +20,13 @@ function randomClass(element) {
 function criarPalavra(text) {
   let palavra = document.createElement('span');
   palavra.innerText = `${text} `;
+  palavra.addEventListener("click", function (event) {
+    randomClass(event.target)
+  });
   return palavra;
 }
 
-function deletarCarta(){
+function deletarCarta() {
   let resultLength = resultado.childNodes.length;
   for (let i = 0; i < resultLength; i += 1) {
     resultado.removeChild(resultado.lastChild);
