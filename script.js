@@ -18,7 +18,7 @@ let todosGroup = [styleGroup, sizeGroup, rotateGroup, inclineGroup];
 // create <span> tag and <p> tag
 
 let spantag = document.createElement('span');
-let ptag = document.querySelector('#texto'); 
+let ptag = document.querySelector('#carta-gerada'); 
 
 // start testing area
 
