@@ -11,7 +11,8 @@ const allClasses = {
 
 function randomClass(element) {
   element.className = '';
-  for (let i = 0; i < Object.keys(allClasses).length; i += 1) {
+  // for (let i = 0; i < Object.keys(allClasses).length; i += 1) {
+    for (const i in allClasses) {
     const randomIndex = parseInt(Math.random() * allClasses[i].length, 10);
     element.classList.add(allClasses[i][randomIndex]);
   }
@@ -26,18 +27,11 @@ function criarPalavra(text) {
   return palavra;
 }
 
-function deletarCarta() {
-  const resultLength = resultado.childNodes.length;
-  for (let i = 0; i < resultLength; i += 1) {
-    resultado.removeChild(resultado.lastChild);
-  }
-}
-
 function criarCarta() {
   const words = input.value.split(' ');
   count.innerText = words.length;
   if (resultado.hasChildNodes) {
-    deletarCarta();
+    resultado.innerHTML = null;
   }
   for (let i = 0; i < words.length; i += 1) {
     const palavra = criarPalavra(words[i]);
