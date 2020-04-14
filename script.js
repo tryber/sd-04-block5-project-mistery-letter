@@ -2,9 +2,7 @@
 
 const button = document.querySelector('#criar-carta');
 const input = document.querySelector('#carta-texto');
-
-// Necessary áreas
-
+const count = document.querySelector('#carta-contador');
 
 
 // arrays groups
@@ -51,12 +49,19 @@ button.addEventListener('click', function(){
        novaClasse(spantag, umaClasse)
       }     
       ptag.appendChild(spantag);
+      // contador
+      let numero = input.value.split(' ').length;
+      count.innerHTML = `A frase digitada acima possui: ${numero} palavras `;
     }
   }else{
     alert('Por favor preencha o campo com o texto desejado!');
   }
 })
 
+// function contador(){
+//   let numero = input.value.split(' ').length;
+//   count.innerHTML = `A frase digitada acima possui: ${numero} palavras `;
+// }
 
 
 // end testing area
