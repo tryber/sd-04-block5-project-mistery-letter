@@ -1,10 +1,10 @@
-span.newspaper {
+.newspaper {
   background-color: antiquewhite;
   font-family: 'Times New Roman', Times, serif;
   font-weight: bold;
 }
 
-span.magazine1 {
+.magazine1 {
   background-color: teal;
   color: white;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -12,40 +12,40 @@ span.magazine1 {
   text-transform: uppercase;
 }
 
-span.magazine2 {
+.magazine2 {
   background-image: url(images/pink-pattern.png);
   color: fuchsia;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 900;
 }
 
-span.medium {
+.medium {
   font-size: 20px;
   padding: 8px;
 }
 
-span.big {
+.big {
   font-size: 30px;
   padding: 10px;
 }
 
-span.reallybig {
+.reallybig {
   font-size: 40px;
   padding: 15px;
 }
 
-span.rotateleft {
+.rotateleft {
   transform: rotate(-5deg);
 }
 
-span.rotateright {
+.rotateright {
   transform: rotate(5deg);
 }
 
-span.skewleft {
+.skewleft {
   transform: skewX(10deg);
 }
 
-span.skewright {
+.skewright {
   transform: skewX(-10deg);
 }
