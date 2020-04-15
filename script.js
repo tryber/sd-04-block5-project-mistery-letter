@@ -10,22 +10,20 @@ const grupos = [grupoEstilo, grupoTamanho, grupoRotacao, grupoInclinacao];
 
 // Funçoes
 function random() {
-  let classOne = grupos[Math.floor(Math.random() * 4)][Math.floor(Math.random() * 3)];
-  let classTwo = grupos[Math.floor(Math.random() * 4)][Math.floor(Math.random() * 3)];
-  
-  while (classOne == classTwo){
+  const classOne = grupos[Math.floor(Math.random() * 4)][Math.floor(Math.random() * 3)];
+  const classTwo = grupos[Math.floor(Math.random() * 4)][Math.floor(Math.random() * 3)];
+  while (classOne === classTwo) {
     classTwo = grupos[Math.floor(Math.random() * 4)][Math.floor(Math.random() * 3)];
   }
   return classOne + ' ' + classTwo;
 }
 
 function letter(frase) {
-  let words = frase.split(" ");
-  for (let i = 0; i < words.length; i += 1){
-    let elemen = document.createElement('span');
-    //elemen.className = `'${grupos[random(3)][random(2)]} ${grupos[random(3)][random(2)]} ${grupos[random(3)][random(2)]}'`;
+  const words = frase.split(' ');
+  for (let i = 0; i < words.length; i += 1) {
+    const elemen = document.createElement('span');
     elemen.className = random();
-    elemen.innerText = words[i] + ' '; 
+    elemen.innerText = words[i]; 
     carta.appendChild(elemen);
   }
 }
@@ -35,4 +33,4 @@ criar.addEventListener('click', function () {
   texto = '';
   texto = document.getElementById('carta-texto').value;
   letter(texto);
-})
+});
