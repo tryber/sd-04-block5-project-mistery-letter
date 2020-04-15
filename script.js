@@ -11,14 +11,9 @@ window.onload = function () {
   }
 
   // eventos do botão criar carta:
-  botaoCarta.addEventListener('click', () => {
-
-    sortearEstilos();
-    contador();
-  })
+  botaoCarta.addEventListener('click', sortearEstilos);
 
   document.body.addEventListener('click', () => {
-    frase = inputCarta.value.split(' ');
     estiloClique(event);
   })
 
@@ -28,13 +23,13 @@ window.onload = function () {
     for (let k = 0; k < frase.length; k += 1) {
       const span1 = document.createElement('span');
       for (let i = 0; i < Object.keys(estilosObjeto).length; i += 1) {
-        let random = estilosObjeto[i][Math.floor(Math.random() * estilosObjeto[i].length)]
+        let random = estilosObjeto[i][Math.floor(Math.random() * estilosObjeto[i].length)];
         span1.classList.add(random);
       }
       span1.innerHTML = frase[k];
       paragrafo.appendChild(span1);
     }
-
+    contador();
   }
 
   // adicionando alteração de estilo ao clique:
@@ -43,7 +38,7 @@ window.onload = function () {
       const target = event.target;
       target.className = '';
       for (let i = 0; i < Object.keys(estilosObjeto).length; i += 1) {
-        let random = estilosObjeto[i][Math.floor(Math.random() * estilosObjeto[i].length)]
+        let random = estilosObjeto[i][Math.floor(Math.random() * estilosObjeto[i].length)];
         target.classList.add(random);
       }
     }
@@ -52,9 +47,7 @@ window.onload = function () {
   // adicionando contador de palavras:
   function contador() {
     const contador = document.getElementById('carta-contador');
-    const palavrasNumero = document.querySelectorAll('span').length
+    const palavrasNumero = document.querySelectorAll('span').length;
     contador.innerHTML = palavrasNumero;
   }
-
-
 }
