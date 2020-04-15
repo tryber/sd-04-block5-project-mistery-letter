@@ -1,38 +1,50 @@
 window.onload = function () {
 
-  const paragrafo = document.getElementById('carta-gerada')
+  const paragrafo = document.getElementById('carta-gerada');
   const botaoCarta = document.getElementById('criar-carta');
   const inputCarta = document.getElementById('carta-texto');
-  const estilos = ["newspaper", "magazine1", "magazine2"];
-  const tamanhos = ["medium", "big", "reallybig"];
-  const rotação = ["rotateleft", "rotateright"];
-  const inclinação = ["skewleft", "skewright"];
-
-  botaoCarta.addEventListener('click', separarLetras)
-  function separarLetras() {
-    let frase = inputCarta.value.split(' ');
-
-    for (let i = 0; i < frase.length; i += 1) {
-      const span1 = document.createElement('span');
-      let estiloRandom = estilos[Math.floor(Math.random()*estilos.length)];
-      span1.classList.add(estiloRandom);
-
-      let tamanhoRandom = tamanhos[Math.floor(Math.random()*tamanhos.length)];
-      span1.classList.add(tamanhoRandom);
-
-      let rotaçãoRandom = rotação[Math.floor(Math.random()*rotação.length)];
-      span1.classList.add(rotaçãoRandom);
-
-      let inclinaçãoRandom = inclinação[Math.floor(Math.random()*inclinação.length)];
-      span1.classList.add(inclinaçãoRandom);
-
-      span1.innerHTML = frase[i];
-      paragrafo.appendChild(span1);
-
-    }
-  
-    
-    
+  const estilosObjeto = {
+    0: ["newspaper", "magazine1", "magazine2"],
+    1: ["medium", "big", "reallybig"],
+    2: ["rotateleft", "rotateright"],
+    3: ["skewleft", "skewright"]
   }
 
+  // eventos do botão criar carta:
+  botaoCarta.addEventListener('click', () => {
+    sortearEstilos();
+    contador();
+  })
+
+  // adicionando sorteio e implementação dos estilos e das frases:
+  function sortearEstilos() {
+    let frase = inputCarta.value.split(' ');
+    for (let i = 0; i < frase.length; i += 1) {
+      const span1 = document.createElement('span');
+      let random = estilosObjeto[i][Math.floor(Math.random() * estilosObjeto[i].length)]
+      span1.classList.add(random);
+      span1.innerHTML = frase[i];
+      paragrafo.appendChild(span1);
+    }
+  }
+
+  // adicionando alteração de estilo ao clique:
+  document.body.addEventListener('click', function (e) {
+    let frase = inputCarta.value.split(' ');
+    if (e.target && e.target.nodeName == 'SPAN') {
+      const target = e.target;
+      target.className = '';
+      for (let i = 0; i < frase.length; i += 1) {
+        let random = estilosObjeto[i][Math.floor(Math.random() * estilosObjeto[i].length)]
+        target.classList.add(random);
+      }
+    }
+  })
+
+  // adicionando contador de palavras:
+  function contador() {
+    const contador = document.getElementById('carta-contador');
+    let frase = inputCarta.value.split(' ');
+    contador.innerHTML = `Sua carta misteriosa contém ${frase.length} palavras!`;
+  }
 }
