@@ -9,7 +9,11 @@ window.onload = function () {
     2: ["rotateleft", "rotateright"],
     3: ["skewleft", "skewright"]
   }
-  let frase = inputCarta.value.split(' ');
+
+  function contadorFrase() {
+    let fraseContador = inputCarta.value.split(' ').length;
+    return fraseContador;
+  }
 
   // eventos do botão criar carta:
   botaoCarta.addEventListener('click', () => {
@@ -20,7 +24,7 @@ window.onload = function () {
   // adicionando sorteio e implementação dos estilos e das frases:
   function sortearEstilos() {
     frase = inputCarta.value.split(' ');
-    for (let i = 0; i < frase.length; i += 1) {
+    for (let i = 0; i < contadorFrase(); i += 1) {
       const span1 = document.createElement('span');
       let random = estilosObjeto[i][Math.floor(Math.random() * estilosObjeto[i].length)]
       span1.classList.add(random);
@@ -31,11 +35,10 @@ window.onload = function () {
 
   // adicionando alteração de estilo ao clique:
   document.body.addEventListener('click', function (e) {
-    frase = inputCarta.value.split(' ');
     if (e.target && e.target.nodeName == 'SPAN') {
       const target = e.target;
       target.className = '';
-      for (let i = 0; i < frase.length; i += 1) {
+      for (let i = 0; i < contadorFrase(); i += 1) {
         let random = estilosObjeto[i][Math.floor(Math.random() * estilosObjeto[i].length)]
         target.classList.add(random);
       }
@@ -45,7 +48,8 @@ window.onload = function () {
   // adicionando contador de palavras:
   function contador() {
     const contador = document.getElementById('carta-contador');
-    frase = inputCarta.value.split(' ');
-    contador.innerHTML = `Sua carta misteriosa contém ${frase.length} palavras!`;
+    contador.innerHTML = `Sua carta misteriosa contém ${contadorFrase()} palavras!`;
   }
+  console.log(contadorFrase());
+
 }
