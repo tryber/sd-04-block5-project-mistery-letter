@@ -9,6 +9,7 @@ window.onload = function () {
     2: ["rotateleft", "rotateright"],
     3: ["skewleft", "skewright"]
   }
+  let frase = inputCarta.value.split(' ');
 
   // eventos do botão criar carta:
   botaoCarta.addEventListener('click', () => {
@@ -18,7 +19,7 @@ window.onload = function () {
 
   // adicionando sorteio e implementação dos estilos e das frases:
   function sortearEstilos() {
-    let frase = inputCarta.value.split(' ');
+    frase = inputCarta.value.split(' ');
     for (let i = 0; i < frase.length; i += 1) {
       const span1 = document.createElement('span');
       let random = estilosObjeto[i][Math.floor(Math.random() * estilosObjeto[i].length)]
@@ -30,7 +31,7 @@ window.onload = function () {
 
   // adicionando alteração de estilo ao clique:
   document.body.addEventListener('click', function (e) {
-    let frase = inputCarta.value.split(' ');
+    frase = inputCarta.value.split(' ');
     if (e.target && e.target.nodeName == 'SPAN') {
       const target = e.target;
       target.className = '';
@@ -44,7 +45,7 @@ window.onload = function () {
   // adicionando contador de palavras:
   function contador() {
     const contador = document.getElementById('carta-contador');
-    let frase = inputCarta.value.split(' ');
+    frase = inputCarta.value.split(' ');
     contador.innerHTML = `Sua carta misteriosa contém ${frase.length} palavras!`;
   }
 }
