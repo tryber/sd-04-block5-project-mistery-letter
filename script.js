@@ -3,21 +3,17 @@ window.onload = function () {
   const paragrafo = document.getElementById('carta-gerada');
   const botaoCarta = document.getElementById('criar-carta');
   const inputCarta = document.getElementById('carta-texto');
-  const estilosObjeto = {
-    0: ["newspaper", "magazine1", "magazine2"],
-    1: ["medium", "big", "reallybig"],
-    2: ["rotateleft", "rotateright"],
-    3: ["skewleft", "skewright"]
-  }
+  const estilos = ["newspaper", "magazine1", "magazine2"];
+  const tamanhos = ["medium", "big", "reallybig"];
+  const rotação = ["rotateleft", "rotateright"];
+  const inclinação = ["skewleft", "skewright"];
 
   let frase = '';
   let limite = '';
 
   // eventos do botão criar carta:
   botaoCarta.addEventListener('click', () => {
-    frase = inputCarta.value.split(' ');
-    limite = frase.length;
-    sortearEstilos(limite);
+    sortearEstilos();
     contador();
   })
 
@@ -28,11 +24,23 @@ window.onload = function () {
   })
 
   // adicionando sorteio e implementação dos estilos e das frases:
-  function sortearEstilos(a) {
-    for (let i = 0; i < a; i += 1) {
+  function sortearEstilos() {
+    let frase = inputCarta.value.split(' ');
+
+    for (let i = 0; i < frase.length; i += 1) {
       const span1 = document.createElement('span');
-      let random = estilosObjeto[i][Math.floor(Math.random() * estilosObjeto[i].length)]
-      span1.classList.add(random);
+      let estiloRandom = estilos[Math.floor(Math.random() * estilos.length)];
+      span1.classList.add(estiloRandom);
+
+      let tamanhoRandom = tamanhos[Math.floor(Math.random() * tamanhos.length)];
+      span1.classList.add(tamanhoRandom);
+
+      let rotaçãoRandom = rotação[Math.floor(Math.random() * rotação.length)];
+      span1.classList.add(rotaçãoRandom);
+
+      let inclinaçãoRandom = inclinação[Math.floor(Math.random() * inclinação.length)];
+      span1.classList.add(inclinaçãoRandom);
+
       span1.innerHTML = frase[i];
       paragrafo.appendChild(span1);
     }
@@ -43,10 +51,25 @@ window.onload = function () {
     if (event.target && event.target.nodeName == 'SPAN') {
       const target = event.target;
       target.className = '';
-      for (let i = 0; i < limite; i += 1) {
-        let random = estilosObjeto[i][Math.floor(Math.random() * estilosObjeto[i].length)]
-        target.classList.add(random);
+      let frase = inputCarta.value.split(' ');
+
+      for (let i = 0; i < frase.length; i += 1) {
+        const span1 = document.createElement('span');
+        let estiloRandom = estilos[Math.floor(Math.random() * estilos.length)];
+        span1.classList.add(estiloRandom);
+
+        let tamanhoRandom = tamanhos[Math.floor(Math.random() * tamanhos.length)];
+        span1.classList.add(tamanhoRandom);
+
+        let rotaçãoRandom = rotação[Math.floor(Math.random() * rotação.length)];
+        span1.classList.add(rotaçãoRandom);
+
+        let inclinaçãoRandom = inclinação[Math.floor(Math.random() * inclinação.length)];
+        span1.classList.add(inclinaçãoRandom);
+
+        target.classList.add(estiloRandom, tamanhoRandom, rotaçãoRandom, inclinaçãoRandom);
       }
+
     }
   }
 
