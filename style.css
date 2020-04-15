@@ -6,10 +6,10 @@ body {
 }
 
 .corpo {
-  background-color: rgba(255, 255, 255, 0.65);
+  background-color: rgba(255 , 255 , 255 , 0.65);
   border-radius: 20px;
   margin: auto;
-  padding: 0px;
+  padding: 0;
   width: 70%;
 }
 
@@ -66,11 +66,11 @@ body {
 }
 
 button {
-  color: rgb(206, 202, 202);
-  background-color: #2f4f4f;
+  background-color: darkslategray;
   border-radius: 5px;
-  border-top-color: rgb(34, 149, 151);
+  border-top-color: rgb(34 , 149 , 151);
   border-width: 5px;
+  color: rgb(206 , 202 , 202);
   font-size: 15pt;
   height: 40px;
   margin: auto;
@@ -87,8 +87,8 @@ button {
 }
 
 .deck , .contador {
-  width: 40%;
   margin: auto;
+  width: 40%;
 }
 
 .contador:hover {
@@ -97,11 +97,6 @@ button {
 
 button , input , .deck {
   display: block;
-}
-
-button:hover {
-  background-color: #3a6e6e;
-  border-top-color: rgb(0, 251, 255);
 }
 
 input {
@@ -120,14 +115,16 @@ input , button , span {
   font-family: Kalam, cursive;
 }
 
+button:hover {
+  background-color: rgb(58 , 110 , 110);
+  border-top-color: rgb(0 , 251 , 255);
+}
+
 span {
   border: 1px solid black;
+  cursor: pointer;
   display: inline-block;
   margin: 40px 3px 45px;
   text-shadow: 1px 1px 4px black;
   transition: background-color 1s;
-}
-
-span {
-  cursor: pointer;
 }
