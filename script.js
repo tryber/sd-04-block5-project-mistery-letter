@@ -19,9 +19,9 @@ function random() {
 }
 
 function letter(frase) {
-  const words = frase.split(' ');
+  let words = frase.split(' ');
   for (let i = 0; i < words.length; i += 1) {
-    const elemen = document.createElement('span');
+    let elemen = document.createElement('span');
     elemen.className = random();
     elemen.innerText = words[i]; 
     carta.appendChild(elemen);
