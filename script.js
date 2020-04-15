@@ -10,8 +10,8 @@ window.onload = function () {
     3: ["skewleft", "skewright"]
   }
 
-  let frase = null;
-  let limite = null;
+  let frase = '';
+  let limite = '';
 
   // eventos do botão criar carta:
   botaoCarta.addEventListener('click', () => {
@@ -53,7 +53,8 @@ window.onload = function () {
   // adicionando contador de palavras:
   function contador() {
     const contador = document.getElementById('carta-contador');
-    contador.innerHTML = `Sua carta misteriosa contém ${limite} palavras!`;
+    const palavrasNumero = document.querySelectorAll('span').length
+    contador.innerHTML = `Sua carta misteriosa contém ${palavrasNumero} palavras!`;
   }
 
 
