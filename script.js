@@ -10,17 +10,21 @@ window.onload = function () {
     3: ["skewleft", "skewright"]
   }
 
-  let frase = inputCarta.value.split(' ');
-  let limite = frase.length;
+  let frase = null;
+  let limite = null;
 
   // eventos do botão criar carta:
   botaoCarta.addEventListener('click', () => {
-    if (inputCarta.value != null) {
-      frase = inputCarta.value.split(' ');
-      limite = frase.length;
-      sortearEstilos(limite);
-      contador();
-    }
+    frase = inputCarta.value.split(' ');
+    limite = frase.length;
+    sortearEstilos(limite);
+    contador();
+  })
+
+  document.body.addEventListener('click', () => {
+    frase = inputCarta.value.split(' ');
+    limite = frase.length;
+    estiloClique(event);
   })
 
   // adicionando sorteio e implementação dos estilos e das frases:
@@ -35,16 +39,16 @@ window.onload = function () {
   }
 
   // adicionando alteração de estilo ao clique:
-  document.body.addEventListener('click', function (e) {
-    if (e.target && e.target.nodeName == 'SPAN') {
-      const target = e.target;
+  function estiloClique(event) {
+    if (event.target && event.target.nodeName == 'SPAN') {
+      const target = event.target;
       target.className = '';
       for (let i = 0; i < limite; i += 1) {
         let random = estilosObjeto[i][Math.floor(Math.random() * estilosObjeto[i].length)]
         target.classList.add(random);
       }
     }
-  })
+  }
 
   // adicionando contador de palavras:
   function contador() {
