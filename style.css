@@ -1,7 +1,16 @@
-span {
-  cursor: pointer;
-  display: inline-block;
-  margin: 2px;
+@charset "utf-8";
+
+body {
+  background: url('https://cdn.pixabay.com/photo/2014/05/21/22/28/old-newspaper-350376_960_720.jpg') no-repeat;
+  background-size: cover;
+}
+
+.corpo {
+  background-color: rgba(255, 255, 255, 0.65);
+  border-radius: 20px;
+  margin: auto;
+  padding: 0px;
+  width: 70%;
 }
 
 .newspaper {
@@ -54,4 +63,71 @@ span {
 
 .skewright {
   transform: skewX(-10deg);
+}
+
+button {
+  color: rgb(206, 202, 202);
+  background-color: #2f4f4f;
+  border-radius: 5px;
+  border-top-color: rgb(34, 149, 151);
+  border-width: 5px;
+  font-size: 15pt;
+  height: 40px;
+  margin: auto;
+  width: 200px;
+}
+
+.contador {
+  background-color: hotpink;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  font-size: 20pt;
+  font-style: oblique;
+  text-align: center;
+}
+
+.deck , .contador {
+  width: 40%;
+  margin: auto;
+}
+
+.contador:hover {
+  background-color: aquamarine;
+}
+
+button , input , .deck {
+  display: block;
+}
+
+button:hover {
+  background-color: #3a6e6e;
+  border-top-color: rgb(0, 251, 255);
+}
+
+input {
+  border-radius: 5px;
+  font-size: 15pt;
+  height: 30px;
+  text-indent: 10px;
+  width: 60%;
+}
+
+input , button {
+  margin: 50px auto 5px;
+}
+
+input , button , span {
+  font-family: Kalam, cursive;
+}
+
+span {
+  border: 1px solid black;
+  display: inline-block;
+  margin: 40px 3px 45px;
+  text-shadow: 1px 1px 4px black;
+  transition: background-color 1s;
+}
+
+span {
+  cursor: pointer;
 }
