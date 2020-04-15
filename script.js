@@ -17,8 +17,10 @@ window.onload = function () {
 
   // eventos do botão criar carta:
   botaoCarta.addEventListener('click', () => {
-    sortearEstilos();
-    contador();
+    if (inputCarta.value != null) {
+      sortearEstilos();
+      contador();
+    }
   })
 
   // adicionando sorteio e implementação dos estilos e das frases:
