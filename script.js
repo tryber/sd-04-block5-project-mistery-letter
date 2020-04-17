@@ -1,5 +1,8 @@
 window.onload = function () {
- // let objectClasses = {Grupo estilo :[];}
+let grupotamanho = ['newspaper', 'magazine1', 'magazine2'];
+function aleatoire(qda) {
+  return Math.floor(Math.random() * 255);
+}
 // function to split the string and put it in span on button click
   const buttonelement = document.getElementById('criar-carta');
   buttonelement.addEventListener('click', function () {
@@ -18,6 +21,7 @@ window.onload = function () {
       cartaGeradElement.appendChild(span).innerHTML = textArray[i];
     }
     const cartaContadorElemment = document.getElementById('carta-contador');
-    cartaContadorElemment.innerText = `contador de palavras: ${textArray.length}`;
+    // cartaContadorElemment.innerText = `contador de palavras: ${textArray.length}`;
+    cartaContadorElemment.innerText = textArray.length;
   });
 };// end of window.onload

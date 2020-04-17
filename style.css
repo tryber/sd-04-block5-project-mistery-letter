@@ -6,6 +6,9 @@ body {
 /* .divCartaGerada {
   justify-content: space-between;
 } */
+.carta-contador {
+  font-family: Arial, Helvetica, sans-serif;
+}
 
 .divcarta-texto {
   margin-top: 10rem;
