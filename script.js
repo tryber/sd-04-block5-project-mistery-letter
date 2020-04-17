@@ -1,8 +1,13 @@
 window.onload = function () {
-let grupotamanho = ['newspaper', 'magazine1', 'magazine2'];
+let grupoestilo = ['newspaper', 'magazine1', 'magazine2'];
+let grupotamanho = ['reallybig', 'big', 'medium'];
+let gruporotação = ['rotateright', 'rotateleft'];
+let grupoinclinação = ['skewright', 'skewleft'];
 function aleatoire(qda) {
-  return Math.floor(Math.random() * 255);
+  return Math.floor(Math.random() * qda);
 }
+let testaleatoire  = aleatoire(10);
+console.log('testaleatoire',testaleatoire);
 // function to split the string and put it in span on button click
   const buttonelement = document.getElementById('criar-carta');
   buttonelement.addEventListener('click', function () {
@@ -14,10 +19,13 @@ function aleatoire(qda) {
       cartaGeradElement.firstChild.remove();
     }
     const span = document.createElement('span');
+    let grupoestilo = ['newspaper', 'magazine1', 'magazine2'];
+   // console.log('classnameAleatoire: ',classnameAleatoire);
     for (let i = 0; i < textArray.length; i += 1) {
       const span = document.createElement('span');
-      span.style.margin = '10px';
-      //span.className = 'spanClass';
+      let classnameAleatoire = grupotamanho[aleatoire(3)] + " " + grupoestilo[aleatoire(3)] + " " + gruporotação[aleatoire(2)] + " " + grupoinclinação[aleatoire(2)];
+      span.style.margin = '10px'; // Ver se e melhor colocar no css?
+      span.className = classnameAleatoire;
       cartaGeradElement.appendChild(span).innerHTML = textArray[i];
     }
     const cartaContadorElemment = document.getElementById('carta-contador');
