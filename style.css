@@ -3,6 +3,10 @@ body {
   text-align: center;
 }
 
+/* .divCartaGerada {
+  justify-content: space-between;
+} */
+
 .divcarta-texto {
   margin-top: 10rem;
 }
