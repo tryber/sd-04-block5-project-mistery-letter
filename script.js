@@ -9,7 +9,7 @@ window.onload = function () {
     cartaGeradElement.innerText = '';
     for (let i = 0; i < textArray.length; i += 1) {
       const span = document.createElement('span');
-      span.className = 'spanClass';
+      //span.className = 'spanClass';
       cartaGeradElement.appendChild(span).innerHTML = textArray[i];
     }
   });
