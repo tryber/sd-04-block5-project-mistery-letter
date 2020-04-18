@@ -20,15 +20,22 @@ window.onload = function () {
   // adicionando sorteio e implementação dos estilos e das frases:
   function sortearEstilos() {
     let frase = inputCarta.value.split(' ');
-    for (let k = 0; k < frase.length; k += 1) {
-      const span1 = document.createElement('span');
-      for (let i = 0; i < Object.keys(estilosObjeto).length; i += 1) {
-        let random = estilosObjeto[i][Math.floor(Math.random() * estilosObjeto[i].length)];
-        span1.classList.add(random);
-      }
-      span1.innerHTML = frase[k];
-      paragrafo.appendChild(span1);
+    while (paragrafo.firstChild) {
+      paragrafo.firstChild.remove();
     }
+    for (let k = 0; k < frase.length; k += 1) {
+      if (frase[k] != '') {
+        const span1 = document.createElement('span');
+        for (let i = 0; i < Object.keys(estilosObjeto).length; i += 1) {
+          let random = estilosObjeto[i][Math.floor(Math.random() * estilosObjeto[i].length)];
+          span1.classList.add(random);
+        }
+        span1.innerHTML = frase[k];
+        paragrafo.appendChild(span1);
+        inputCarta.value = '';
+      }
+    }
+
     contador();
   }
 
