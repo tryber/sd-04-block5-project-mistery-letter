@@ -42,7 +42,7 @@ function wordCounter() {
   const input = textInput.value;
   const inputArray = input.split(' ');
   const counter = document.querySelector('.carta-contador');
-  counter.innerHTML = `Word count: ${inputArray.length}`;
+  counter.innerHTML = inputArray.length;
 }
 
 // Delete generated words
