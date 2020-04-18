@@ -1,3 +1,14 @@
+/* Global styles */
+body {
+  background-color: rgb(29 , 31 , 32);
+  box-sizing: border-box;
+  display: flex;
+  font-family: Manrope, sans-serif;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
 /* Words styles */
 .newspaper {
   background-color: antiquewhite;
@@ -80,14 +91,4 @@
   flex-direction: column;
   justify-content: center;
   width: 80%;
-}
-
-body {
-  background-color: rgb(29 , 31 , 32);
-  box-sizing: border-box;
-  display: flex;
-  font-family: Manrope, sans-serif;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
 }
