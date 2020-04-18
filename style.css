@@ -62,6 +62,10 @@ body {
   transform: skewX(-10deg);
 }
 
+span {
+  cursor: pointer;
+}
+
 .criar-carta {
   background-color: rgb(49 , 49 , 49);
   border: 2px solid white;

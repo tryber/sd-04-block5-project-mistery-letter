@@ -3,24 +3,7 @@ const textInput = document.querySelector('.carta-texto');
 const text = document.querySelector('.carta-gerada');
 const createBtn = document.querySelector('.criar-carta');
 
-// Add span to words
-function addSpan(str) {
-  const splitText = str.split(' ');
-  splitText.forEach((item) => {
-    const spanElement = document.createElement('span');
-    spanElement.innerHTML = `${item} `;
-    text.appendChild(spanElement);
-  });
-}
-
-// Delete generated words
-function deleteText() {
-  const element = document.querySelector('.carta-gerada');
-  while (element.firstChild) {
-    element.removeChild(element.lastChild);
-  }
-}
-
+// Create and randomly add style classes to words
 function addRandomClass() {
   const spans = document.querySelectorAll('span');
   spans.forEach((item) => {
@@ -39,6 +22,28 @@ function addRandomClass() {
       item.classList.add(selectedStyle);
     }
   });
+}
+
+// Add span to words
+function addSpan(str) {
+  const splitText = str.split(' ');
+  splitText.forEach((item) => {
+    const spanElement = document.createElement('span');
+    spanElement.innerHTML = `${item} `;
+    spanElement.addEventListener('click', () => {
+      spanElement.className = '';
+      addRandomClass();
+    });
+    text.appendChild(spanElement);
+  });
+}
+
+// Delete generated words
+function deleteText() {
+  const element = document.querySelector('.carta-gerada');
+  while (element.firstChild) {
+    element.removeChild(element.lastChild);
+  }
 }
 
 // Create text button
