@@ -3,9 +3,6 @@ body {
   text-align: center;
 }
 
-/* .divCartaGerada {
-  justify-content: space-between;
-} */
 .carta-contador {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -58,7 +55,7 @@ button:active {
 
 .newspaper {
   background-color: antiquewhite;
-  font-family: Times, 'Times New Roman';
+  font-family: Times, 'Times New Roman', serif;
   font-weight: bold;
 }
 
@@ -75,6 +72,11 @@ button:active {
   color: fuchsia;
   font-family: Verdana;
   font-weight: 900;
+}
+
+.container-carta-contador {
+  display: flex;
+  justify-content: center;
 }
 
 .medium {
