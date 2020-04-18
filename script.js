@@ -32,7 +32,6 @@ window.onload = function () {
         }
         span1.innerHTML = frase[k];
         paragrafo.appendChild(span1);
-        inputCarta.value = '';
       }
     }
 
