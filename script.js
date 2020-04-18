@@ -29,7 +29,7 @@ function addSpan(str) {
   const splitText = str.split(' ');
   splitText.forEach((item) => {
     const spanElement = document.createElement('span');
-    spanElement.innerHTML = `${item} `;
+    spanElement.innerHTML = item;
     spanElement.addEventListener('click', () => {
       spanElement.className = '';
       addRandomClass();
