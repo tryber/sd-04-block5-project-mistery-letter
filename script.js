@@ -38,6 +38,13 @@ function addSpan(str) {
   });
 }
 
+function wordCounter() {
+  const input = textInput.value;
+  const inputArray = input.split(' ');
+  const counter = document.querySelector('.carta-contador');
+  counter.innerHTML = `Word count: ${inputArray.length}`;
+}
+
 // Delete generated words
 function deleteText() {
   const element = document.querySelector('.carta-gerada');
@@ -51,4 +58,5 @@ createBtn.addEventListener('click', () => {
   deleteText();
   addSpan(textInput.value);
   addRandomClass();
+  wordCounter();
 });

@@ -8,11 +8,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <section class="general-container">
+  <header>
     <h1 class="title">Mistery Letter</h1>
-    <input type="text" id="carta-texto" class="carta-texto">
-    <button id="criar-carta" class="criar-carta">Create letter</button>
-    <p id="carta-gerada" class="carta-gerada"></p>
+  </header>
+  <section class="general-container">
+    <div class="controls-container">
+      <input type="text" id="carta-texto" class="carta-texto">
+      <button id="criar-carta" class="criar-carta">Create letter</button>
+    </div>
+    <p id="carta-contador" class="carta-contador">Word count: 0</p>
+    <section class="letter-container">
+      <p id="carta-gerada" class="carta-gerada"></p>
+    </section>
   </section>
 
   <script src="./script.js"></script>
