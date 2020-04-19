@@ -2,8 +2,8 @@ const paragraph = document.getElementById('carta-gerada');
 const inputInsert = document.getElementById('carta-texto');
 const btnCreate = document.getElementById('criar-carta');
 const grupoEstilo = ['newspaper', 'magazine1', 'magazine2'];
-const grupoTamanho = ['medium', ' big', 'reall ybig'];
-const grupoRotacao = ['rotateleft ', 'rotateri ght'];
+const grupoTamanho = ['medium', 'big', 'reallybig'];
+const grupoRotacao = ['rotateleft', 'rotateright'];
 const grupoInclinacao = ['skewleft', 'skewright'];
 
 function letterGenerate() {
