@@ -25,7 +25,7 @@ function createSpan() {
     card.appendChild(span);
   }
   // Count words 
-  count.innerText = 'Você escreveu ' + words.length + ' palavras';
+  count.innerText = words.length;
 }
 // Button click event
 button.addEventListener('click', function () {
