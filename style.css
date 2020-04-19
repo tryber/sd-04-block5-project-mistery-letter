@@ -1,3 +1,9 @@
+h1 {
+  color: purple;
+  font-family: Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
 .container1 {
   align-items: center;
   display: flex;
@@ -33,15 +39,15 @@
   width: 70%;
 }
 
-.carta-contador{
+.carta-contador {
   font-size: 25px;
   margin-left: 80px;
 }
 
 .newspaper {
   background-color: antiquewhite;
-  font-family: "Times New Roman", 'Times', serif;
-  font-weight: bold;
+  font-family: Times New Roman, Times, serif;
+  font-weight: 700;
 }
 
 .magazine1 {

@@ -24,7 +24,7 @@ function createSpan() {
     span.innerText = words[i];
     card.appendChild(span);
   }
-  // Count words 
+  // Count words
   count.innerText = words.length;
 }
 // Button click event
@@ -36,9 +36,9 @@ button.addEventListener('click', function () {
 
 card.addEventListener('click', function (event) {
   const word = document.querySelectorAll('span');
-  const allStyles = ['newspaper','magazine1','magazine2','medium','big','reallybig','rotateleft','rotateright','skewleft','skewright'];
+  const allStyles = ['newspaper', 'magazine1', 'magazine2', 'medium', 'big', 'reallybig', 'rotateleft', 'rotateright', 'skewleft', 'skewright'];
   if (word !== null) {
-    let index = Math.floor(Math.random() * allStyles.length);
+    const index = Math.floor(Math.random() * allStyles.length);
     event.target.className = allStyles[index];
   }
 });
