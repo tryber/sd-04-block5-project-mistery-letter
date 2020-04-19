@@ -1,0 +1,41 @@
+* {
+  border: 1px solid red;
+}
+.container1 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  height: 50px;
+  align-items: center;
+  flex-direction: row;
+}
+.container2 {
+  display: flex;
+  justify-content: center;
+}
+
+.carta-texto {
+ width: 500px;
+ height: 20px;
+}
+
+.criar-carta {
+  width: 130px;
+  height: 25px;
+  margin-left: 20px;
+  font-size: 15px;
+}
+
+.carta-gerada {
+  width: 600px;
+  height: 200px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.word {
+  margin: auto;
+  padding: 5px;
+}
