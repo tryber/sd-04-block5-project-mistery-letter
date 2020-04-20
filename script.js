@@ -3,12 +3,17 @@ let fraseResult = document.querySelector('#carta-gerada');
 let btnCriar = document.querySelector('#criar-carta');
 
 btnCriar.addEventListener('click', function() {
-    console.log(inputFrase.value);
     mostraFrase(inputFrase.value);
 });
 
 function mostraFrase(frase) {
-   let palavra = document.createElement('span');
-   palavra.innerHTML = frase
-   fraseResult.appendChild(palavra);
-}
+    let splits = frase.split(' ');
+    for (let i = 0; i < splits.length; i += 1){
+      let palavra = document.createElement('span');
+      palavra.innerHTML = splits[i];
+  
+      fraseResult.appendChild(palavra);
+  
+      console.log(palavra);
+    }
+  }
