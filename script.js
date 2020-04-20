@@ -1,14 +1,12 @@
 var inputText = document.getElementById("carta-texto");
-var buttonCreate = document.querySelector("#button-create");
+var buttonCreate = document.querySelector("#criar-carta");
 var showPhrase = document.querySelector("#carta-gerada");
 
 
 buttonCreate.addEventListener('click', mostraFrase);
 
 function mostraFrase(){
-    console.log(inputText.value);
     const words = inputText.value.split(" ");
-    console.log(words);
+    console.log(inputText.value);
     showPhrase.innerHTML = inputText.value;
-    
 }
