@@ -5,7 +5,7 @@ const estilosObjeto = {
   0: ['newspaper', 'magazine1', 'magazine2'],
   1: ['medium', 'big', 'reallybig'],
   2: ['rotateleft', 'rotateright'],
-  3: ['skewleft', 'skewright'],
+  3: ['skewleft', 'skewright']
 };
 
 // adicionando contador de palavras:
