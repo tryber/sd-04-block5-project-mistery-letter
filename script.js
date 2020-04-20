@@ -4,7 +4,7 @@ let btnCriar = document.querySelector('#criar-carta');
 
 btnCriar.addEventListener('click', function() {
     console.log(inputFrase.value);
-    mostraFrase(inputFrase.value)
+    mostraFrase(inputFrase.value);
 });
 
 function mostraFrase(frase) {
