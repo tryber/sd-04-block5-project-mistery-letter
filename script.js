@@ -18,6 +18,7 @@ function includeSpan(words) {
 }
 
 function displayLetters() {
+  pCarGer.innerText = '';
   includeSpan(separateWords());
 }
 
