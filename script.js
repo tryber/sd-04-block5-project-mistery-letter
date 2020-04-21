@@ -27,7 +27,6 @@ function letterGenerate() {
   aleatoryCreate();
 }
 
-
 function aleatoryCreate() {
   const spanTag = document.querySelectorAll('span');
   console.log(spanTag);
@@ -42,9 +41,3 @@ function aleatoryCreate() {
 }
 
 btnCreate.addEventListener('click', letterGenerate);
-
-  // function () {
-  //   for (let i = 0; i < spanTag.length; i++){
-  //     spanTag[i].className = spanTag[i][Math.floor(Math.random() * spanTag.length)];
-  //   }
-  // });
