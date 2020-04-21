@@ -39,5 +39,5 @@ function aleatoryCreate() {
     });
   }
 }
- 
+
 btnCreate.addEventListener('click', letterGenerate);
