@@ -22,13 +22,23 @@ function letterGenerate() {
     createSpan.classList.add(grupoInclinacao[Math.floor(Math.random() * grupoInclinacao.length)]);
     contador += 1;
     paragraph.appendChild(createSpan);
-    createSpan.addEventListener('click', aleatoryCreate);
   }
   countWords.innerHTML = contador;
+  aleatoryCreate();
 }
 
-function aleatoryCreate(createSpan) {
-  document.createSpan.className =  aleatory[Math.floor(Math.random() * aleatory.length)];
+
+function aleatoryCreate() {
+  const spanTag = document.querySelectorAll('span');
+  console.log(spanTag);
+  for (let i = 0; i < spanTag.length; i = i + 1) {
+    spanTag[i].addEventListener('click', function() {
+    spanTag[i].className = grupoEstilo[Math.floor(Math.random() * grupoEstilo.length)];
+    spanTag[i].classList.add(grupoTamanho[Math.floor(Math.random() * grupoTamanho.length)]);
+    spanTag[i].classList.add(grupoRotacao[Math.floor(Math.random() * grupoRotacao.length)]);
+    spanTag[i].classList.add(grupoInclinacao[Math.floor(Math.random() * grupoInclinacao.length)]);
+    });
+  }
 }
 
 btnCreate.addEventListener('click', letterGenerate);

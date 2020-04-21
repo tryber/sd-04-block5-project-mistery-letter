@@ -53,3 +53,7 @@ body {
 .skewright {
   transform: skewX(-10deg);
 }
+
+span {
+  cursor: pointer;
+}
