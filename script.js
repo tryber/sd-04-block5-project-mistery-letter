@@ -19,8 +19,8 @@ function includeSpan(words) {
 
 function displayLetters() {
   pCarGer.innerText = '';
+  
   includeSpan(separateWords());
-  // console.log(pCarGer)
 }
 
 butCriCar.addEventListener('click', displayLetters);
