@@ -1,5 +1,5 @@
 let i;
-const class = ['newspaper', 'magazine1', 'magazine2', 'medium', 'big', 'reallybig', 'rotateleft', 'rotateright', 'skewleft', 'skewright'];
+const styleCls = ['newspaper', 'magazine1', 'magazine2', 'medium', 'big', 'reallybig', 'rotateleft', 'rotateright', 'skewleft', 'skewright'];
 const inpCarTex = document.getElementById('carta-texto');
 const butCriCar = document.getElementById('criar-carta');
 const pCarGer = document.getElementById('carta-gerada');
