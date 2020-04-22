@@ -19,6 +19,7 @@ function separateWords() {
 function checkClasses(el, cls) {
   if (!el.classList.contains(cls)) {
     el.classList.add(cls);
+    return false;
   }
 
   return true;
