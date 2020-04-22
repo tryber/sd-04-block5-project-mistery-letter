@@ -42,9 +42,7 @@ function selectGroups() {
   return infoGroup;
 }
 
-function addClass(parent) {
-  const objGroup = selectGroups();
-
+function addClass(parent, objGroup) {
   for (i = 0; i < objGroup.rdmAmtGroup; i += 1) {
     for (j = 0; j < parent.children.length; j += 1) {
       // o indice do grupo selecionado nesta iteração
@@ -68,7 +66,7 @@ function includeSpan(words) {
     pCarGer.appendChild(span);
   }
 
-  addClass(pCarGer);
+  addClass(pCarGer, selectGroups());
 }
 
 function displayLetters() {
