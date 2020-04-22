@@ -5,7 +5,7 @@ const pCarGer = document.getElementById('carta-gerada');
 
 function separateWords() {
   const words = inpCarTex.value.split(' ');
-  
+
   return words;
 }
 
@@ -19,7 +19,7 @@ function includeSpan(words) {
 
 function displayLetters() {
   pCarGer.innerText = '';
-  
+
   includeSpan(separateWords());
 }
 
