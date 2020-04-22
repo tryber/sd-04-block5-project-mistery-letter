@@ -13,7 +13,7 @@
 }
 
 .magazine2 {
-  background-image: 'images/pink-pattern.png';
+  background-image: url(images/pink-pattern.png);
   color: fuchsia;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 900;
@@ -46,3 +46,6 @@
   transform: skewX(10deg);
 }
 
+.skewright {
+  transform: skewX(-10deg);
+}
