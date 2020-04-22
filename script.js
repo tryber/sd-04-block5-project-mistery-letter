@@ -3,21 +3,24 @@ let j;
 const inpCarTex = document.getElementById('carta-texto');
 const butCriCar = document.getElementById('criar-carta');
 const pCarGer = document.getElementById('carta-gerada');
+const pCarCon = document.getElementById('carta-contador');
 const classGroup = {
   styleGroup: ['newspaper', 'magazine1', 'magazine2'],
   sizeGroup: ['medium', 'big', 'reallybig'],
   rotationGroup: ['rotateleft', 'rotateright'],
-  inclinationGroup: ['skewleft', 'skewright']
+  inclinationGroup: ['skewleft', 'skewright'],
 };
 const arrClassGroup = [
   'newspaper', 'magazine1', 'magazine2',
   'medium', 'big', 'reallybig',
   'rotateleft', 'rotateright',
-  'skewleft', 'skewright'
+  'skewleft', 'skewright',
 ];
 
 function separateWords() {
   const words = inpCarTex.value.split(' ');
+
+  pCarCon.innerText = words.length;
 
   return words;
 }
