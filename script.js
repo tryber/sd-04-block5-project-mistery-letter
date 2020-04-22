@@ -44,12 +44,9 @@ function selectGroups() {
 
 function addClass(parent, objGroup) {
   for (i = 0; i < objGroup.rdmAmtGroup; i += 1) {
-    for (j = 0; j < parent.children.length; j += 1) {
-      // o indice do grupo selecionado nesta iteração
-      const rdmGroup = Math.floor(Math.random() * objGroup.amountGroupCls);
-      // o grupo selecionado nesta iteração
-      const nameClsGroup = objGroup.grpNames[rdmGroup];
-      // o indice da classe do grupo selecionado nesta iteração
+    for (j = 0; j < parent.children.length; j += 1) {      
+      const rdmGroup = Math.floor(Math.random() * objGroup.amountGroupCls);      
+      const nameClsGroup = objGroup.grpNames[rdmGroup];      
       const rdmCls = Math.floor(Math.random() * classGroup[nameClsGroup].length);
 
       if (checkClasses(parent.children[j], classGroup[nameClsGroup][rdmCls])) {
