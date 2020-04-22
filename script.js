@@ -25,25 +25,44 @@ function checkClasses(el, cls) {
   return true;
 }
 
-function addClass(parent) {
+function selectGroups() {
+  const infoGroup = {};
   // os nomes dos grupos de classes existentes
-  const grpNames = Object.keys(classGroup);
+  infoGroup.grpNames = Object.keys(classGroup);
   // a quantidade de grupos de classes existentes
-  const amountGroupCls = Object.keys(classGroup).length;
+  infoGroup.amountGroupCls = Object.keys(classGroup).length;
   // a quantidade de grupos q devem ser inseridos em span
-  let rdmAmtGroup = Math.floor(Math.random() * amountGroupCls) + 1;
+  infoGroup.rdmAmtGroup = Math.floor(Math.random() * infoGroup.amountGroupCls) + 1;
 
-  if (rdmAmtGroup === 1) {
+  if (infoGroup.rdmAmtGroup === 1) {
     // garante q tenha pelo menos 2 grupos inseridos em span
-    rdmAmtGroup += 1;
+    infoGroup.rdmAmtGroup += 1;
   }
 
-  for (i = 0; i < rdmAmtGroup; i += 1) {
+  return infoGroup;
+}
+
+function addClass(parent) {
+  
+  // const grpNames = Object.keys(classGroup);
+  
+  // const amountGroupCls = Object.keys(classGroup).length;
+  
+  // let rdmAmtGroup = Math.floor(Math.random() * amountGroupCls) + 1;
+
+  // if (rdmAmtGroup === 1) {
+    
+  //   rdmAmtGroup += 1;
+  // }
+
+  const objGroup = selectGroups();
+
+  for (i = 0; i < objGroup.rdmAmtGroup; i += 1) {
     for (j = 0; j < parent.children.length; j += 1) {
       // o indice do grupo selecionado nesta iteração
-      const rdmGroup = Math.floor(Math.random() * amountGroupCls);
+      const rdmGroup = Math.floor(Math.random() * objGroup.amountGroupCls);
       // o grupo selecionado nesta iteração
-      const nameClsGroup = grpNames[rdmGroup];
+      const nameClsGroup = objGroup.grpNames[rdmGroup];
       // o indice da classe do grupo selecionado nesta iteração
       const rdmCls = Math.floor(Math.random() * classGroup[nameClsGroup].length);
 
