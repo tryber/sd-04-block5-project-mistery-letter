@@ -61,10 +61,11 @@ function addClass(parent, objGroup, fcObjClasses) {
 
       if (checkClasses(parent.children[j], classGroup[objClass.nameClsGroup][objClass.rdmCls])) {
         j -= 1;
-        continue;
       }
     }
   }
+
+  console.log(pCarGer)
 }
 
 function includeSpan(words) {
