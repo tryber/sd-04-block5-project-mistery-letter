@@ -7,8 +7,14 @@ const classGroup = {
   styleGroup: ['newspaper', 'magazine1', 'magazine2'],
   sizeGroup: ['medium', 'big', 'reallybig'],
   rotationGroup: ['rotateleft', 'rotateright'],
-  inclinationGroup: ['skewleft', 'skewright'],
+  inclinationGroup: ['skewleft', 'skewright']
 };
+const arrClassGroup = [
+  'newspaper', 'magazine1', 'magazine2',
+  'medium', 'big', 'reallybig',
+  'rotateleft', 'rotateright',
+  'skewleft', 'skewright'
+];
 
 function separateWords() {
   const words = inpCarTex.value.split(' ');
@@ -80,10 +86,21 @@ function includeSpan(words) {
   addClass(selectGroups());
 }
 
+function newStyle(e) {
+  const rdmNumber = Math.floor(Math.random() * arrClassGroup.length);
+
+  e.target.className = '';
+  e.target.className = arrClassGroup[rdmNumber];
+}
+
 function displayLetters() {
   pCarGer.innerText = '';
 
   includeSpan(separateWords());
+
+  for (i = 0; i < pCarGer.children.length; i += 1) {
+    pCarGer.children[i].addEventListener('click', newStyle);
+  }
 }
 
 butCriCar.addEventListener('click', displayLetters);
