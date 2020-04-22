@@ -1,0 +1,68 @@
+.carta-texto {
+  margin: auto 10px;
+  width: 500px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  margin: 50px auto;
+  width: 100%;
+}
+
+/* Grupo Estilo */
+.newspaper {
+  background-color: 'antiquewhite';
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 'bold';
+}
+
+.magazine1 {
+  background-color: 'teal';
+  color: 'white';
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 900;
+  text-transform: 'uppercase';
+}
+
+.magazine2 {
+  background-image: 'images/pink-pattern.png';
+  color: 'fuchsia';
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 900;
+}
+
+/* Grupo Tamanho */
+.medium {
+  font-size: 20px;
+  padding: 8px;
+}
+
+.big {
+  font-size: 30px;
+  padding: 10px;
+}
+
+.reallybig {
+  font-size: 40px;
+  padding: 15px;
+}
+
+/* Grupo Rotação */
+.rotateleft {
+  transform: 'rotate(-5deg)';
+}
+
+.rotateright {
+  transform: 'rotate(5deg)';
+}
+
+/* Grupo inclinação */
+.skewleft {
+  transform: 'skewX(10deg)';
+}
+
+.skewright {
+  transform: 'skewX(-10deg)';
+}
