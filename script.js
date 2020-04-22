@@ -60,7 +60,8 @@ function addClass(parent, objGroup, fcObjClasses) {
       const objClass = fcObjClasses(selectGroups());
 
       if (checkClasses(parent.children[j], classGroup[objClass.nameClsGroup][objClass.rdmCls])) {
-        break;
+        j -= 1;
+        continue;
       }
     }
   }
