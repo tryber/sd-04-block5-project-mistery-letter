@@ -42,14 +42,24 @@ function selectGroups() {
   return infoGroup;
 }
 
-function addClass(parent, objGroup) {
-  for (i = 0; i < objGroup.rdmAmtGroup; i += 1) {
-    for (j = 0; j < parent.children.length; j += 1) {      
-      const rdmGroup = Math.floor(Math.random() * objGroup.amountGroupCls);      
-      const nameClsGroup = objGroup.grpNames[rdmGroup];      
-      const rdmCls = Math.floor(Math.random() * classGroup[nameClsGroup].length);
+function selectClasses(objGroup) {
+  const infoClasses = {};
+  // o indice do grupo selecionado nesta iteração
+  infoClasses.rdmGroup = Math.floor(Math.random() * objGroup.amountGroupCls);
+  // o grupo selecionado nesta iteração
+  infoClasses.nameClsGroup = objGroup.grpNames[infoClasses.rdmGroup];
+  // o indice da classe do grupo selecionado nesta iteração
+  infoClasses.rdmCls = Math.floor(Math.random() * classGroup[infoClasses.nameClsGroup].length);
 
-      if (checkClasses(parent.children[j], classGroup[nameClsGroup][rdmCls])) {
+  return infoClasses;
+}
+
+function addClass(parent, objGroup, fcObjClasses) {
+  for (i = 0; i < objGroup.rdmAmtGroup; i += 1) {
+    for (j = 0; j < parent.children.length; j += 1) {
+      const objClasses = fcObjClasses(selectGroups());
+
+      if (checkClasses(parent.children[j], classGroup[objClasses.nameClsGroup][objClasses.rdmCls])) {
         break;
       }
     }
@@ -63,7 +73,7 @@ function includeSpan(words) {
     pCarGer.appendChild(span);
   }
 
-  addClass(pCarGer, selectGroups());
+  addClass(pCarGer, selectGroups(), selectClasses);
 }
 
 function displayLetters() {
