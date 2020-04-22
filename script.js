@@ -54,15 +54,19 @@ function selectClasses(objGroup) {
   return infoClasses;
 }
 
-function addClass(parent, objGroup, fcObjClasses) {
-  for (i = 0; i < objGroup.rdmAmtGroup; i += 1) {
-    for (j = 0; j < parent.children.length; j += 1) {
-      const objClass = fcObjClasses(objGroup);
+function addClassInt(parent, objGroup, fcObjClasses) {
+  for (j = 0; j < parent.children.length; j += 1) {
+    const objClass = fcObjClasses(objGroup);
 
-      if (checkClasses(parent.children[j], classGroup[objClass.nameClsGroup][objClass.rdmCls])) {
-        j -= 1;
-      }
+    if (checkClasses(parent.children[j], classGroup[objClass.nameClsGroup][objClass.rdmCls])) {
+      j -= 1;
     }
+  }
+}
+
+function addClass(objGroup) {
+  for (i = 0; i < objGroup.rdmAmtGroup; i += 1) {
+    addClassInt(pCarGer, selectGroups(), selectClasses);
   }
 }
 
@@ -73,7 +77,7 @@ function includeSpan(words) {
     pCarGer.appendChild(span);
   }
 
-  addClass(pCarGer, selectGroups(), selectClasses);
+  addClass(selectGroups());
 }
 
 function displayLetters() {
