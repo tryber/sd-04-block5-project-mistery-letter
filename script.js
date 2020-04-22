@@ -43,18 +43,6 @@ function selectGroups() {
 }
 
 function addClass(parent) {
-  
-  // const grpNames = Object.keys(classGroup);
-  
-  // const amountGroupCls = Object.keys(classGroup).length;
-  
-  // let rdmAmtGroup = Math.floor(Math.random() * amountGroupCls) + 1;
-
-  // if (rdmAmtGroup === 1) {
-    
-  //   rdmAmtGroup += 1;
-  // }
-
   const objGroup = selectGroups();
 
   for (i = 0; i < objGroup.rdmAmtGroup; i += 1) {
