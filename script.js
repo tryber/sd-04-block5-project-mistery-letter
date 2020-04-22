@@ -57,9 +57,9 @@ function selectClasses(objGroup) {
 function addClass(parent, objGroup, fcObjClasses) {
   for (i = 0; i < objGroup.rdmAmtGroup; i += 1) {
     for (j = 0; j < parent.children.length; j += 1) {
-      const objClasses = fcObjClasses(selectGroups());
+      const objClass = fcObjClasses(selectGroups());
 
-      if (checkClasses(parent.children[j], classGroup[objClasses.nameClsGroup][objClasses.rdmCls])) {
+      if (checkClasses(parent.children[j], classGroup[objClass.nameClsGroup][objClass.rdmCls])) {
         break;
       }
     }
