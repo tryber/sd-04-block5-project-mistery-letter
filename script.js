@@ -57,15 +57,13 @@ function selectClasses(objGroup) {
 function addClass(parent, objGroup, fcObjClasses) {
   for (i = 0; i < objGroup.rdmAmtGroup; i += 1) {
     for (j = 0; j < parent.children.length; j += 1) {
-      const objClass = fcObjClasses(selectGroups());
+      const objClass = fcObjClasses(objGroup);
 
       if (checkClasses(parent.children[j], classGroup[objClass.nameClsGroup][objClass.rdmCls])) {
         j -= 1;
       }
     }
   }
-
-  console.log(pCarGer)
 }
 
 function includeSpan(words) {
