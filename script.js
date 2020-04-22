@@ -16,45 +16,51 @@ function separateWords() {
   return words;
 }
 
-function includeSpan(words) {
-  for (i = 0; i < words.length; i += 1) {
-    const span = document.createElement('span');
-    span.innerText = words[i];
-    pCarGer.appendChild(span);
-    console.log(pCarGer)
-  }
-
-  addClass(pCarGer);
-}
-
 function checkClasses(el, cls) {
-  if (el.classList.contains(cls)) {
-    return true;
-  } else {
+  if (!el.classList.contains(cls)) {
     el.classList.add(cls);
   }
+
+  return true;
 }
 
 function addClass(parent) {
-  const grpNames = Object.keys(classGroup); // os nomes dos grupos de classes existentes
-  const amountGroupCls = Object.keys(classGroup).length; // a quantidade de grupos de classes existentes
-  let rdmAmtGroup = Math.floor(Math.random() * amountGroupCls) + 1; // a quantidade de grupos q devem ser inseridos em span 
+  // os nomes dos grupos de classes existentes
+  const grpNames = Object.keys(classGroup);
+  // a quantidade de grupos de classes existentes
+  const amountGroupCls = Object.keys(classGroup).length;
+  // a quantidade de grupos q devem ser inseridos em span
+  let rdmAmtGroup = Math.floor(Math.random() * amountGroupCls) + 1;
 
-  if (rdmAmtGroup === 1) { 
-    rdmAmtGroup += 1; // garante q tenha pelo menos 2 grupos inseridos em span
+  if (rdmAmtGroup === 1) {
+    // garante q tenha pelo menos 2 grupos inseridos em span
+    rdmAmtGroup += 1;
   }
 
   for (i = 0; i < rdmAmtGroup; i += 1) {
     for (j = 0; j < parent.children.length; j += 1) {
-      const rdmGroup = Math.floor(Math.random() * amountGroupCls); // o indice do grupo selecionado nesta iteração
-      const nameClsGroup = grpNames[rdmGroup]; // o grupo selecionado nesta iteração
-      const rdmCls = Math.floor(Math.random() * classGroup[nameClsGroup].length); // o indice da classe do grupo selecionado nesta iteração
+      // o indice do grupo selecionado nesta iteração
+      const rdmGroup = Math.floor(Math.random() * amountGroupCls);
+      // o grupo selecionado nesta iteração
+      const nameClsGroup = grpNames[rdmGroup];
+      // o indice da classe do grupo selecionado nesta iteração
+      const rdmCls = Math.floor(Math.random() * classGroup[nameClsGroup].length);
 
       if (checkClasses(parent.children[j], classGroup[nameClsGroup][rdmCls])) {
         break;
       }
     }
   }
+}
+
+function includeSpan(words) {
+  for (i = 0; i < words.length; i += 1) {
+    const span = document.createElement('span');
+    span.innerText = words[i];
+    pCarGer.appendChild(span);
+  }
+
+  addClass(pCarGer);
 }
 
 function displayLetters() {
